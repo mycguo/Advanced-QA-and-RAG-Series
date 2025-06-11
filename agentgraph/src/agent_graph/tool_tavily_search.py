@@ -1,4 +1,4 @@
-from langchain_community.tools.tavily_search import TavilySearchResults
+from langchain_tavily import TavilySearch
 
 
 def load_tavily_search_tool(tavily_search_max_results: int):
@@ -11,6 +11,6 @@ def load_tavily_search_tool(tavily_search_max_results: int):
         tavily_search_max_results (int): The maximum number of search results to return for each query.
 
     Returns:
-        TavilySearchResults: A configured instance of the Tavily search tool with the specified `max_results`.
+        TavilySearch: A configured instance of the Tavily search tool with the specified `max_results`.
     """
-    return TavilySearchResults(max_results=tavily_search_max_results)
+    return TavilySearch(max_results=tavily_search_max_results)

@@ -3,6 +3,7 @@ import os
 import yaml
 from dotenv import load_dotenv
 from pyprojroot import here
+import streamlit as st
 
 load_dotenv()
 
@@ -14,8 +15,8 @@ class LoadToolsConfig:
             app_config = yaml.load(cfg, Loader=yaml.FullLoader)
 
         # Set environment variables
-        os.environ['OPENAI_API_KEY'] = os.getenv("OPEN_AI_API_KEY")
-        os.environ['TAVILY_API_KEY'] = os.getenv("TAVILY_API_KEY")
+        os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_API_KEY']
+        os.environ['TAVILY_API_KEY'] = st.secrets["TAVILY_API_KEY"]
 
         # Primary agent
         self.primary_agent_llm = app_config["primary_agent"]["llm"]

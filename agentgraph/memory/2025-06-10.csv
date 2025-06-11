@@ -1,0 +1,5 @@
+thread_id,timestamp,user_query,response
+1,22:51:44,hello,Hello! How can I assist you today?
+1,22:53:13,"hello
+",Hello! How can I assist you today?
+1,22:53:40,how do i upload PDF?,"It seems that I can't directly assist with uploading files like PDFs. However, I can guide you on how to upload a PDF to various platforms or services. Could you please specify where you would like to upload the PDF (e.g., email, cloud storage, website)?"

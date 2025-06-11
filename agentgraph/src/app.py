@@ -13,7 +13,7 @@ with gr.Blocks() as demo:
                 chatbot = gr.Chatbot(
                     [],
                     elem_id="chatbot",
-                    bubble_full_width=False,
+                    type="tuples",
                     height=500,
                     avatar_images=(
                         ("images/AI_RT.png"), "images/openai.png"),
