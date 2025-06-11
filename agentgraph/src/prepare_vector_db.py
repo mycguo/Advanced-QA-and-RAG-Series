@@ -6,7 +6,7 @@ from langchain_community.document_loaders import PyPDFLoader
 from langchain_openai import OpenAIEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from dotenv import load_dotenv
-
+import streamlit as st
 
 class PrepareVectorDB:
     """
@@ -110,7 +110,10 @@ class PrepareVectorDB:
 
 if __name__ == "__main__":
     load_dotenv()
-    os.environ['OPENAI_API_KEY'] = os.getenv("OPEN_AI_API_KEY")
+    os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_API_KEY']
+    # Get OpenAI API key from environment variables
+    if not os.getenv('OPENAI_API_KEY'):
+        raise ValueError("OPENAI_API_KEY not found in environment variables. Please set it in your .env file.")
 
     with open(here("configs/tools_config.yml")) as cfg:
         app_config = yaml.load(cfg, Loader=yaml.FullLoader)
